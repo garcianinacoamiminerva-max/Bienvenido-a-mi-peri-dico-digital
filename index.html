@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bienvenido a mi periódico digital</title>
+    <meta name="description" content="Portada de mi periódico digital" />
+    <style>
+      :root {
+        --bg: #0f172a;        /* slate-900 */
+        --card: #111827;      /* gray-900 */
+        --text: #e5e7eb;      /* gray-200 */
+        --muted: #94a3b8;     /* slate-400 */
+        --accent: #22d3ee;    /* cyan-400 */
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+        background: radial-gradient(1200px 600px at 10% -10%, #0b1220 0%, var(--bg) 40%, #0b1220 100%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(10px);
+        background: rgba(15, 23, 42, 0.6);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+        padding: 1rem 1.25rem;
+        z-index: 10;
+      }
+      .container { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+      h1 {
+        margin: 0.25rem 0 0.5rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+      }
+      .subtitle { color: var(--muted); font-size: 0.95rem; }
+      main { padding: 1.5rem 0 3rem; }
+      .hero {
+        background: linear-gradient(180deg, rgba(34, 211, 238, 0.12), transparent 55%);
+        border: 1px solid rgba(148, 163, 184, 0.15);
+        border-radius: 16px;
+        padding: 1.25rem;
+        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid rgba(148, 163, 184, 0.15);
+        border-radius: 14px;
+        padding: 1rem;
+        transition: transform 120ms ease, border-color 120ms ease;
+      }
+      .card:hover { transform: translateY(-2px); border-color: rgba(34, 211, 238, 0.35); }
+      .badge { display: inline-block; font-size: 0.75rem; color: #0f172a; background: var(--accent); padding: 0.25rem 0.5rem; border-radius: 999px; font-weight: 700; }
+      footer { color: var(--muted); font-size: 0.9rem; padding: 2rem 0 3rem; text-align: center; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Bienvenido a mi periódico digital</h1>
+        <p class="subtitle">Noticias, cultura y opinión con mirada local.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <span class="badge">Portada</span>
+        <h2 style="margin:0.5rem 0 0.25rem">Titular principal del día</h2>
+        <p style="margin:0">Aquí irá el resumen de tu noticia destacada. Puedes editar este texto y reemplazarlo por tu contenido real.</p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Actualidad</h3>
+          <p>Breve descripción de una nota reciente. <a href="#">Leer más</a></p>
+        </article>
+        <article class="card">
+          <h3>Cultura</h3>
+          <p>Espacio para eventos, cine y arte. <a href="#">Leer más</a></p>
+        </article>
+        <article class="card">
+          <h3>Opinión</h3>
+          <p>Columna editorial o análisis. <a href="#">Leer más</a></p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Mi Periódico Digital — Hecho con ♥. 
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
